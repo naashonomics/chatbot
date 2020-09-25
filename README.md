@@ -56,3 +56,8 @@ e.g.: <path>/genhtml –prefix <your client root> --ignore-errors source gcov_ou
 Add option “--branch-coverage” for branch coverage
 
 5. Use a browser to view ./lcov/index.html
+
+#                    Hit         TOTAL           COVERAGE 
+Line         
+BRANCHES
+TOTAL
