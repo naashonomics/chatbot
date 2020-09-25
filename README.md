@@ -25,6 +25,7 @@ For each test, specify the location (with absolute path) where the gcov database
 
 setenv GCOV_PREFIX <>.gcov
 
+-suppression_files 
 
 # Step 3 :  Generating the report
 
@@ -61,3 +62,57 @@ Add option “--branch-coverage” for branch coverage
 # Line         
 # BRANCHES
 # TOTAL
+
+
+# Valgrind 3.11.0 
+
+Valgrind is a tool suite that automatically detect many memory and thread  related problems with an application
+
+
+1> Callgrind is a call-graph generating cache profiler
+
+2> Memcheck detects memory-management problems
+
+3> Helgrind is a thread debugger which finds data races in multithreaded programs
+
+4> DRD is a tool for detecting errors in multithreaded C and C++ programs 
+
+
+1> memory access violations, such as array out of bounds read/write 
+   
+
+2> use of uninitialized variables.  Valgrind only reports this when the memory is actually being used. 
+
+3> memory leaks
+
+4> heap memory freed incorrectly
+
+5> overlapping addresses in strcpy()
+
+
+# With Debugger  :  valgrind --vgdb=yes --vgdb-error=0 <executable>
+
+
+# DEFECT TYPES 
+
+IPR  |  UMR  | MLK  | PAR  | UMR  | FUM
+FMM  |  COR  | PMLK | RMLK 
+
+Example: memory leak
+  mem.c
+
+```
+#include <stdio.h>
+int main()
+{
+  char *buff=malloc;
+  return 0;
+}
+```
+
+
+
+Run command
+gcc -g -o mem mem.cvalgrind --leak-check=full ./mem
+Output- definitely lost: mem.c: 5
+
