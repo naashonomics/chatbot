@@ -57,7 +57,7 @@ Add option “--branch-coverage” for branch coverage
 
 5. Use a browser to view ./lcov/index.html
 
-#                    Hit         TOTAL           COVERAGE 
-Line         
-BRANCHES
-TOTAL
+# ..........                   Hit         TOTAL           COVERAGE 
+# Line         
+# BRANCHES
+# TOTAL
