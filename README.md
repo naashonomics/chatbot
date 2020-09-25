@@ -147,3 +147,27 @@ valgrind --tool=callgrind ./mem
 - kcachegrind ./callgrind.out.XXXXX
 
 Output: it can see performance for each routine and you can see step by step
+
+
+Jenkins SCP 
+
+```
+from datetime import datetime
+import os,glob,pwd,subprocess,pexpect,getpass
+print(getpass.getuser())
+try:
+    var_command = "scp <file1> host:<file2>"
+    var_child = pexpect.spawn(var_command)
+    i = var_child.expect(["password::", pexpect.EOF])
+    if i==0: # send password            
+        print('Login SusccessFul' )    
+        var_child.sendline("password")
+        var_child.expect(pexpect.EOF)
+    elif i==1:
+        print("Got the key or connection timeout")
+        pass
+except Exception as e:
+    print("Oops Something went wrong buddy")
+    print(e)
+print(getpass.getuser())
+```
