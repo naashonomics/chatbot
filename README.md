@@ -112,7 +112,12 @@ int main()
 
 
 
-Run command
-gcc -g -o mem mem.cvalgrind --leak-check=full ./mem
-Output- definitely lost: mem.c: 5
+# Run command
+
+gcc -g -o mem mem.c
+
+valgrind --leak-check=full ./mem
+
+O3utput
+- definitely lost: mem.c: 5
 
