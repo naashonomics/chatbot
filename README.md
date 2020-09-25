@@ -53,8 +53,6 @@ e.g.: <path>/gcov_post_process.py -src <your client root> -in $GCOV_PREFIX -out 
 
 e.g.: <path>/genhtml –prefix <your client root> --ignore-errors source gcov_out/_LCOV_.txt --legend --title "your title” --output-directory ./lcov
 
-<path> above should be /depot/tools/code_coverage/lcov/1.13/bin or any newer version that is available
-
 Add option “--branch-coverage” for branch coverage
 
 5. Use a browser to view ./lcov/index.html
