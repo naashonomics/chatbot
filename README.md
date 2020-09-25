@@ -114,10 +114,36 @@ int main()
 
 # Run command
 
+Example: memory leak
+
 gcc -g -o mem mem.c
 
 valgrind --leak-check=full ./mem
 
-O3utput
+# Output
 - definitely lost: mem.c: 5
 
+# Run Command 
+
+Example: invalid access
+
+gcc -g -o mem mem.c
+
+# Input 
+valgrind --leak-check=full ./mem
+
+# Output: 
+- Invalid write of size 2 at mem_test.c:9
+
+
+# Run command: 
+
+callgrind
+
+valgrind --tool=callgrind ./mem
+
+- output file like “callgrind.out.XXXXX”
+
+- kcachegrind ./callgrind.out.XXXXX
+
+Output: it can see performance for each routine and you can see step by step
